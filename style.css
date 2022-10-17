@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading{
+    width: 100%;
+    font-size: 20px;
+    color: white;
+}
+.info{
+    font-size: 16px;
+    color: black;
+}
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 150vh;
+}
+#obj-name{
+    width: 400px;
+    height: 35px;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 5px 5px 20px grey;
+    margin-top: 50px;
+    font-size: 16px;
+    font-family: cursive;
+    transition: 0.2s;
+}
+#obj-name:hover{
+    width: 410px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: none;
+}
+#obj-name:focus{
+    width: 400px;
+    height: 35px;
+    border-radius: 4px;
+    cursor: default;
+    background: linear-gradient(to right, orange, yellow);
+    color: white;
+}
+button{
+    width: 150px;
+    margin-top: 20px;
+}
+#status{
+    margin-right: 10px;
+}
+canvas{
+    border-radius: 10px;
+    border: 3px solid white;
+    margin-top: 140px;
+}
