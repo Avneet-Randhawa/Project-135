@@ -15,9 +15,10 @@ function setup() {
 }
 
 function start() {
-    objecttoidenify = document.querySelector("#obj-name").value;
+    objecttoidenify = document.getElementById("obj-name").value;
     objectDetector = ml5.objectDetector('cocossd', modeloaded);
     document.getElementById("status").innerHTML = "Status : Detecting Objects!!!";
+    document.querySelector("#found").innerHTML = objecttoidenify + " Not Found";
 }
 
 function modeloaded() {
@@ -51,14 +52,15 @@ function draw() {
             percent = floor(objects[i].confidence * 100);
             text(objects[i].label + "  " + percent + "%", objects[i].x + 15, objects[i].y + 15);
             rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
-            document.querySelector("#found").innerHTML = objecttoidenify + " Not Found";
 
             if (objects[i].label == objecttoidenify) {
-                document.querySelector("#found").innerHTML = objecttoidenify + " Found";
-               utterThis = new SpeechSynthesisUtterance(objects[i].label + " "+ "Found");
-               synth.speak(utterThis);
-               video.stop();
-               objectDetector.detect(got_results);
+                console.log(objecttoidenify + " Found");
+                document.getElementById("found").innerHTML = objecttoidenify + " Found";
+                utterThis = new SpeechSynthesisUtterance(objects[i].label + " "+ "Found");
+                synth.speak(utterThis);
+                video.stop();
+                objectDetector.detect(got_results);
+                document.getElementById("found").innerHTML = objecttoidenify + " Found";
             }
         }
     }
