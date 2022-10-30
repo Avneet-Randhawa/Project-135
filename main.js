@@ -19,10 +19,13 @@ function start() {
     objectDetector = ml5.objectDetector('cocossd', modeloaded);
     document.getElementById("status").innerHTML = "Status : Detecting Objects!!!";
     document.querySelector("#found").innerHTML = objecttoidenify + " Not Found";
+    speechSynthesis.cancel();
+    video.play();
 }
 
 function modeloaded() {
     console.log("Model Is Loaded!!!");
+    document.querySelector("#found").innerHTML = objecttoidenify + " Not Found";
     Status = true;
 }
 
